@@ -101,6 +101,7 @@ main {
     flex-grow: 1; */
     width: 50%;
     height: 100%;
+    flex-grow: 1;
 }
 
 h1{
@@ -113,14 +114,14 @@ h3{
     margin-bottom: 22px;
 }
 .img{
-    /* flex-grow: 4; */
     width: 50%;
     height: 100%;
+    flex-grow: 1;
 }
 
 .img img {
-    width: 100%;
-    height: 100%;
+    width: 600px;
+    height: 600px;
 }
 
 .requireBox{
