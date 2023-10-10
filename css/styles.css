@@ -29,10 +29,10 @@ body, h1, h2, h3, p, ul, li {
     text-decoration: underline;
     color: #2b4ed0;
     border: none;
-    background-color: #f2f9ff;
+    background-color: transparent;
 }
 
-.container{
+.layout{
     height: auto;
     margin: 0px auto;
     border:1px solid rgba(225, 225, 226, 0.8);
@@ -45,6 +45,15 @@ body, h1, h2, h3, p, ul, li {
     background-color: #f2f9ff;
 }
 /* navbar */
+.container{
+    width: 100%;
+    margin: 0px auto;
+    margin-bottom: 92px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
 header {
     width: 100%;
@@ -58,10 +67,12 @@ header {
 
 .logo{
 display: flex;
+fill: white !important;
 }
 
 .navbar{
     margin: 28px;
+    margin-right: 0px;
     text-align: center;
     display: flex;
     flex-grow: 8;
@@ -69,10 +80,10 @@ display: flex;
 }
 
 header .navbar ul{
-    text-align: center;
+    align-items: center;
     display: flex;
-    justify-content: center;
-    flex-grow: 5;
+    justify-content: flex-end;
+    flex-grow: 1;
     list-style: none;
 }
 
@@ -80,28 +91,51 @@ header .navbar li{
     margin-right:40px ;
 }
 
-header .navbar .btnFondo{
+.switch{
+
     display: flex;
-    flex-grow: 1;
-    justify-content: flex-end;
-    justify-content: center;
+    background-color: black;
+    border-radius: 100px;
+    margin: 0 !important;
+    position:relative;
+
 }
 
+.switch img{
+    width:28px; 
+    height:auto; 
+    padding:7px  6px   6px    6px;
+
+}
+
+.navbar ul .switch::before{
+    content: "";
+    position:absolute;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: solid black;
+    left: 0;
+    right: unset;
+}
+
+.navbar ul .switch.active::before{
+    right: 2px;
+    bottom: 3px;
+    left: unset;
+    height: 18px;
+    width: 18px;
+    border: solid #fff;
+}
+
+
 main {
-    width: 100%;
-    margin: 0px auto;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
 }
 
 .content{
-    /* display: flex;
-    flex-direction: column;
-    flex-grow: 1; */
-    width: 50%;
-    height: 100%;
-    flex-grow: 1;
+    width: 40%;
 }
 
 h1{
@@ -114,14 +148,11 @@ h3{
     margin-bottom: 22px;
 }
 .img{
-    width: 50%;
-    height: 100%;
-    flex-grow: 1;
 }
 
 .img img {
-    width: 600px;
-    height: 600px;
+    width: 500px;
+    height: 500px;
 }
 
 .requireBox{
@@ -145,6 +176,26 @@ h3{
 #check{
 margin-right: 8px;
 }
+
+/* active */
+
+body.active .layout{
+    background-color: #111629;
+}
+
+body.active .layout main .container .content h1,
+body.active .layout main .container .content p{
+    color: white;
+}
+
+body.active .layout header .navbar ul li a{
+    color: #6b788b;
+}
+
+body.active .layout main .container .content .requireBox p{
+    color: #6b788b;
+}
+
 /* 
 .get-started {
     padding: 1rem 2rem;
